@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "steps": "../../components/steps/steps",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "选择产品"
+}

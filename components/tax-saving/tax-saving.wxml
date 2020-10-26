@@ -1,0 +1,11 @@
+<view class="tax_saving">
+    <view class="bgimg"></view>
+    <view class="tax_head">
+        <!-- <text>测算一下每年能省多少税</text>
+        <text>合理筹划，税负直降15%-80%</text> -->
+    </view>
+    <view class="tax_saving_content">
+        <text class="tax_title" wx:if="{{ title }}">{{ title }}</text>
+        <slot></slot>
+    </view>
+</view>

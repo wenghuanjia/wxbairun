@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/service/service",
+    "pages/profile/profile",
+    "pages/enterprise/enterprise",
+    "pages/personal/personal",
+    "pages/new-list/new-list",
+    "pages/detail/detail",
+    "pages/product/product",
+    "pages/info-enter/info-enter",
+    "pages/confirm/confirm",
+    "pages/sign/sign",
+    "pages/business/business",
+    "pages/invoice/invoice",
+    "pages/create-invoice/create-invoice",
+    "pages/create-address/create-address",
+    "pages/address/address",
+    "pages/invoice-history/invoice-history",
+    "pages/contract/contract",
+    "pages/contact/contact",
+    "pages/create-person/create-person",
+    "pages/result/result",
+    "pages/e-result/e-result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "岳辉",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7E8389",
+    "selectedColor": "#0081FF",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/static/tab-icon/home.png",
+      "selectedIconPath": "/static/tab-icon/home_active.png"
+    }, {
+      "pagePath": "pages/service/service",
+      "text": "财税服务",
+      "iconPath": "/static/tab-icon/service.png",
+      "selectedIconPath": "/static/tab-icon/service_active.png"
+    }, {
+      "pagePath": "pages/profile/profile",
+      "text": "我的账户",
+      "iconPath": "/static/tab-icon/profile.png",
+      "selectedIconPath": "/static/tab-icon/profile_active.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}

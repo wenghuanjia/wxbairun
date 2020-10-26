@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  },
+  "navigationBarTitleText": "已申请发票记录",
+  "navigationBarBackgroundColor": "#0E9DD8",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,6 @@
+<view class="steps_container">
+	<view class="steps_item {{ active >= index + 1 ? 'active' : '' }}" wx:for="{{ items }}" wx:key="id">
+		<text class="iconfont {{ item.icon }} {{ active >= index ? 'active' : '' }}"></text>
+		<text class="desc {{ active >= index ? 'active' : '' }}"> {{ item.name }}</text>
+	</view>
+</view>

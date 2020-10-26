@@ -1,0 +1,59 @@
+@import '../../static/style/iconfont.wxss';
+
+.steps_container {
+  position: relative;
+  padding: 25rpx 35rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.steps_item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps_item::before {
+  content: '';
+  position: absolute;
+  top: 25rpx;
+  left: 90%;
+  z-index: -1;
+  width: 100%;
+  height: 2rpx;
+  background-color: #A5A5A5;
+}
+
+.steps_item:last-child::before {
+  display: none;
+}
+
+.steps_item.active::before {
+  background-color: #409EFF;
+}
+
+.steps_item .iconfont {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  font-size: 24px;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.iconfont.active {
+  color: #409EFF;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7F7F7F;
+  padding-top: 14rpx;
+}
+
+.desc.active {
+  color: #409EFF;
+}

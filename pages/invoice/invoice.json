@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index",
+    "user-head": "/components/user-head/user-head",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "发票抬头",
+  "navigationBarBackgroundColor": "#0E9DD8",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,16 @@
+<van-cell-group>
+	<time title="签署日期" bindchangeTime="changeTime" data-name="field16"></time>
+	<van-field bind:blur="onBlur" input-align="right" label="服务费" type="number" required model:value="{{ field9 }}" placeholder="请输入服务费" />
+	<van-field bind:blur="onBlur" input-align="right" label="代理服务费率" type="number" required model:value="{{ field10 }}" placeholder="请输入代理服务费率" />
+	<van-field bind:blur="onBlur" input-align="right" label="服务企业数" type="number" required model:value="{{ field11 }}" placeholder="请输入服务企业数" />
+	<van-field bind:blur="onBlur" input-align="right" label="有效年限" type="number" model:value="{{ field15 }}" placeholder="请输入有效年限" />
+	<van-cell-group>
+		<view bindtap="showPopup">
+			<van-field readonly clickable input-align="right" is-link model:value="{{ field13 }}" required label="企业类型" placeholder="请选择企业类型" />
+		</view>
+	</van-cell-group>
+	<van-popup show="{{ show }}" bindclose="onClose" position="bottom" custom-style="height: 60%">
+		<van-picker title="企业类型" show-toolbar columns="{{ columns }}" bindcancel="onClose" bindconfirm="onConfirm" />
+	</van-popup>
+	<van-field bind:blur="onBlur" input-align="right" label="甲方开票金额" model:value="{{ field14 }}" placeholder="请输入甲方开票金额" type="number" />
+</van-cell-group>

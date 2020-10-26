@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "steps": "../../components/steps/steps",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "navigationBarTitleText": "确认提交"
+}

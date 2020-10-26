@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "添加人员",
+  "navigationBarBackgroundColor": "#0E9DD8",
+  "navigationBarTextStyle": "white"
+}

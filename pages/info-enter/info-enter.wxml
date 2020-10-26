@@ -1,0 +1,89 @@
+<steps active="{{ 1 }}"></steps>
+<!-- <view class="info_container">
+	<van-cell-group border="{{ false }}">
+		<van-field input-align="right" input-class="input" label-class="lable" label="经营行业" required name="industry" model:value="{{ industry }}" placeholder="请填写经营行业" />
+		<van-field input-align="right" input-class="input" label-class="lable" label="开票税目" required name="tax_item" model:value="{{ tax_item }}" placeholder="请输入开票税目" />
+		<van-field input-align="right" input-class="input" label-class="lable" label="开票金额" required name="amount" model:value="{{ amount }}" placeholder="请填写，如：800">
+			<text slot="button">万元</text>
+		</van-field>
+	</van-cell-group>
+	<van-collapse accordion value="{{ activeName }}" bind:change="onChange" border="{{ false }}">
+		<van-collapse-item title="常用发表抬头" name="1">
+			<van-radio-group value="{{ radio }}" bind:change="onRadioChange">
+				<van-cell-group border="{{ false }}">
+					<van-cell clickable data-name="{{ index + 1 }}" bind:click="onRadioClick" wx:for="{{invoiceList}}" wx:key="id">
+						<view slot="title">
+							<view class="van-cell-text">{{item.field3}}/{{item.field4}}</view>
+						</view>
+						<van-radio slot="right-icon" name="{{ index + 1 }}" />
+					</van-cell>
+				</van-cell-group>
+			</van-radio-group>
+		</van-collapse-item>
+		<van-collapse-item title="我的地址" name="2">
+			<van-radio-group value="{{ address }}" bind:change="onRadioChange2">
+				<van-cell-group border="{{ false }}">
+					<van-cell clickable data-name="{{ index + 1 }}" bind:click="onRadioClick2" wx:for="{{addressList}}" wx:key="id">
+						<view slot="title">
+							<view class="van-cell-text">{{item.field3}}/{{item.field5}}</view>
+						</view>
+						<van-radio slot="right-icon" name="{{ index + 1 }}" />
+					</van-cell>
+				</van-cell-group>
+			</van-radio-group>
+		</van-collapse-item>
+	</van-collapse>
+	<view class="btn">
+		<van-button bindtap="onNext" type="info" size="large">下一步</van-button>
+	</view>
+</view> -->
+<van-cell-group>
+	<van-field input-align="right" required label="甲方" model:value="{{ field1 }}" placeholder="请输入甲方" />
+	<van-field input-align="right" required label="联系地址" model:value="{{ field2 }}" placeholder="请输入联系地址" />
+	<van-field input-align="right" required label="联系人" model:value="{{ field3 }}" placeholder="请输入联系人" />
+	<van-field input-align="right" required maxlength="11" label="联系电话" model:value="{{ field4 }}" placeholder="请输入联系电话" />
+</van-cell-group>
+
+<block wx:if="{{ service_type === '税务代理' }}">
+	<contract-a bindinputChange="inputChange"></contract-a>
+</block>
+<block wx:if="{{ service_type === '商事代理' }}">
+	<contract-b bindinputChange="inputChange"></contract-b>
+</block>
+<block wx:if="{{ service_type === '新业态用工' }}">
+	<contract-c bindinputChange="inputChange"></contract-c>
+</block>
+
+<view class="btn">
+	<van-button bindtap="onNext" type="info" size="large">下一步</van-button>
+</view>
+
+<!-- <view class="content">
+		<view class="item-cell">
+			<view class="item-field__label">
+				<text>常用发票抬头</text>
+			</view>
+			<view class="right">
+				<text>公司名称/纳税人识别号</text>
+				<van-icon name="arrow" size="14px" />
+			</view>
+		</view>
+		<view class="item-cell">
+			<view class="item-field__label">
+				<text>我的地址</text>
+			</view>
+			<view class="right">
+				<text>收件人/地址</text>
+				<van-icon name="arrow" size="14px" />
+			</view>
+		</view>
+		<view class="item-cell">
+			<view class="item-field__label">
+				<text>关联人员</text>
+			</view>
+			<view class="right">
+				<text>手机号</text>
+				<van-icon name="arrow" size="14px" />
+			</view>
+		</view>
+	</view> -->

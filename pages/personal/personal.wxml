@@ -1,0 +1,11 @@
+<tax-saving title="请输入个人收入情况">
+	<view class="input_con">
+		<van-cell-group>
+			<van-field required type="number" input-align="right" input-class="input" label-class="lable" label="工资月薪" model:value="{{ salary }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="劳务报酬" model:value="{{ remuneration }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="股息红利" model:value="{{ dividend }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="年终奖" model:value="{{ bonus }}" placeholder="请填写，如：8000" />
+		</van-cell-group>
+		<van-button loading="{{ loading }}" loading-text="计算中..." bindtap="onCalculation" type="info" size="large">立即计算</van-button>
+	</view>
+</tax-saving>

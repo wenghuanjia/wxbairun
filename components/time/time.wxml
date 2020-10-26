@@ -1,0 +1,6 @@
+<view class="time_container">
+	<van-cell title="{{ title }}" value="{{ time }}" bind:click="onDisplay" />
+	<van-popup custom-class="time_popup" show="{{ show }}" bind:close="onCancel" position="bottom" custom-style="height: 50%">
+		<van-datetime-picker bind:cancel="onCancel" bind:confirm="onConfirm" type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+	</van-popup>
+</view>

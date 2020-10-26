@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tax-saving": "/components/tax-saving/tax-saving"
+  },
+  "navigationBarBackgroundColor": "#0993E8",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "个人节税结果"
+}

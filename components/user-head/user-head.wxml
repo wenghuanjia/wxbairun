@@ -1,0 +1,9 @@
+<view class="profile_container">
+	<view class="position-relative d-flex a-center" style="height: 320rpx;">
+		<image src="../../static/images/bg.jpg" style="height: 320rpx; width: 100%;" mode=""></image>
+		<view class="btn d-flex flex-column a-center position-absolute avatar">
+			<image src="{{ avatarUrl }}" style="height: 145rpx;width: 145rpx;border: 5rpx:solid; " class="rounded-circle border-light ml-4" mode=""></image>
+			<text class="no_register">{{ nickName }}</text>
+		</view>
+	</view>
+</view>

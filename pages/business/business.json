@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "user-head": "/components/user-head/user-head",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-panel": "@vant/weapp/panel/index"
+  },
+  "navigationBarTitleText": "服务申请进展"
+}

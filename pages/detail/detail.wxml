@@ -1,0 +1,6 @@
+<view style="padding: 0 30rpx;">
+	<rich-text nodes="{{ htmlSnip }}"></rich-text>
+	<view wx:if="{{!htmlSnip || htmlSnip.length === 0}}">
+		<van-empty description="暂无详情数据" />
+	</view>
+</view>

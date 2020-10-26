@@ -1,0 +1,4 @@
+.btns {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}

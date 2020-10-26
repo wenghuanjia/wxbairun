@@ -1,0 +1,10 @@
+.address {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #F7F8FA;
+}
+
+.add_address {
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}

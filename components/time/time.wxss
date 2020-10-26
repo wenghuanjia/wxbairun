@@ -1,0 +1,8 @@
+.time_container {
+  width: 100vw;
+  /* min-height: 100vh; */
+}
+
+.time_popup {
+  width: 100vw;
+}

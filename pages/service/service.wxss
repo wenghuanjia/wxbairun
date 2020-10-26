@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav_item {
+  display: flex;
+  padding: 30rpx 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 33.333333%;
+}
+
+.nav_item text {
+  color: #FBBD08;
+  font-size: 32px;
+}
+
+.nav_item .nav_title {
+  font-size: 14px;
+  color: #929292;
+  padding-top: 20rpx;
+}

@@ -1,0 +1,21 @@
+<view class="address">
+	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{addressList}}">
+		<van-cell-group>
+			<van-cell value="{{ item.field4 }}" label="{{ item.field5 }}" border="{{ false }}">
+				<view slot="title">
+					<text style="padding-right: 20rpx;">{{ item.field3 }}</text>
+					<!-- <van-tag type="success" wx:if="{{index === 1}}">默认地址</van-tag> -->
+				</view>
+			</van-cell>
+		</van-cell-group>
+		<view slot="right">
+			<van-button custom-style="height: 130rpx;" type="danger" style="height: 130rpx;" data-id="{{item.id}}" bindtap="onDel" square>删除</van-button>
+			<van-button custom-style="height: 130rpx;" type="warning" style="height: 130rpx;" data-id="{{item.id}}" bindtap="onEdit" square>编辑</van-button>
+		</view>
+	</van-swipe-cell>
+	<view class="add_address">
+		<van-button bindtap="onCreateAddress" type="info" size="large">添加新地址</van-button>
+	</view>
+</view>
+
+<van-dialog id="van-dialog" />

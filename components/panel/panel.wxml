@@ -1,0 +1,6 @@
+<view class="panel_container">
+	<text class="panel_title">{{ title }}</text>
+	<view class="panel_content">
+		<slot></slot>
+	</view>
+</view>

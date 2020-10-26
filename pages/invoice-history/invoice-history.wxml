@@ -1,0 +1,6 @@
+<van-tabs animated color="#F37A1D" sticky="{{ true }}">
+  <van-tab title="待付款">待付款</van-tab>
+  <van-tab title="待开具">待开具</van-tab>
+  <van-tab title="已开具">已开具</van-tab>
+  <van-tab title="已取消">已取消</van-tab>
+</van-tabs>

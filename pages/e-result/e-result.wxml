@@ -1,0 +1,67 @@
+<tax-saving>
+	<view class="input_con">
+		<text class="title">企业今年正常纳税金额</text>
+		<view class="row">
+			<view class="col col_1">
+				<text>正常纳税</text>
+			</view>
+			<view class="col col_2">
+				<text>纳税合计 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.nshj }}</text></text>
+				<text>实际税负率 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.sjfzl }}</text></text>
+			</view>
+			<view class="col col_3">
+				企业五险一金 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.qy_wxyj }}</text>
+				员工五险一金 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.yg_wxyj }}</text>
+			</view>
+			<view class="col col_4">
+				<text>节税额 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.jse }}</text></text>
+				<!-- <text>节税比例 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.jsbl }}</text> </text> -->
+			</view>
+			<view class="col col_5">
+				未节税
+			</view>
+		</view>
+	</view>
+	<view class="input_con">
+		<text class="title">正常缴税金额过高，可考虑我司多种合法节税方案</text>
+		<!-- <view class="row">
+			<view class="col col_1 active">
+				<text>01</text>
+			</view>
+			<view class="col col_2">
+				<text>综合所得额纳税XXXX</text>
+				<text>年终奖纳税XXXX</text>
+			</view>
+			<view class="col col_3">
+				<text>综合所得额纳税XXXX</text>
+				<text>年终奖纳税XXXX</text>
+			</view>
+			<view class="col col_4">
+				实际收入XXXX
+			</view>
+			<view class="col col_5 active">
+				节税XXXX
+			</view>
+		</view> -->
+		<view class="row" wx:for="{{programme}}">
+			<view class="col col_1 active">
+				<text>{{ '0' + (index + 1) }}</text>
+			</view>
+			<view class="col col_2">
+				<text>纳税合计 <text style="color: #FF7B57;font-size: 11px;">{{ item.nshj }}</text></text>
+				<text>实际税负率 <text style="color: #FF7B57;font-size: 11px;">{{ item.sjfzl }}</text></text>
+			</view>
+			<view class="col col_3">
+				企业五险一金 <text style="color: #FF7B57;font-size: 11px;">{{ item.qy_wxyj }}</text>
+				员工五险一金 <text style="color: #FF7B57;font-size: 11px;">{{ item.yg_wxyj }}</text>
+			</view>
+			<view class="col col_4">
+				<text>节税额 <text style="color: #FF7B57;font-size: 11px;">{{ item.jse }}</text></text>
+				<text>节税比例 <text style="color: #FF7B57;font-size: 11px;">{{ item.jsbl }}</text> </text>
+			</view>
+			<view class="col col_5 active">
+				企业成本下降 {{ item.qycb_xj }}
+			</view>
+		</view>
+	</view>
+</tax-saving>

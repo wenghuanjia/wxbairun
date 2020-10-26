@@ -1,0 +1,18 @@
+<tax-saving title="请输入企业收入情况">
+	<view class="input_con">
+		<van-cell-group>
+			<view bindtap="showPopup">
+				<van-field readonly required clickable input-align="right" model:value="{{ rate }}" label="企业增值税率" placeholder="请选择企业增值税率" />
+			</view>
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="企业开票金额" required model:value="{{ money }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="企业的费用" required model:value="{{ profit }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="企业营业成本" model:value="{{ cost }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="企业员工数" model:value="{{ num }}" placeholder="请填写，如：8000" />
+			<van-field type="number" input-align="right" input-class="input" label-class="lable" label="员工平均年工资" model:value="{{ average }}" placeholder="请填写，如：8000" />
+		</van-cell-group>
+		<van-popup show="{{ show }}" bindclose="onClose" position="bottom" custom-style="height: 40%">
+			<van-picker title="选择企业增值税率" show-toolbar columns="{{ columns }}" bindcancel="onClose" bindconfirm="onConfirm" />
+		</van-popup>
+		<van-button loading="{{ loading }}" loading-text="计算中..." bindtap="onCalculation" type="info" size="large">立即计算</van-button>
+	</view>
+</tax-saving>

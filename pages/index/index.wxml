@@ -1,0 +1,25 @@
+<view class="index_container">
+	<bxb-swiper></bxb-swiper>
+	<!-- 财税知多点 -->
+	<panel title="财税知多点">
+		<block wx:for="{{ taxSpot }}" wx:key="id">
+			<view class="img_cover" data-url="/pages/new-list/new-list?type={{ item.id }}&title={{ item.name }}" bindtap="handleJump">
+				<text class="service_title">{{ item.name }}</text>
+				<!-- <text class="service_desc">
+					<text class="tip">知</text>多点
+				</text> -->
+			</view>
+		</block>
+	</panel>
+	<!-- 计算器 -->
+	<panel title="计算器">
+		<view class="computed">
+			<view bindtap="handleJump" data-url="/pages/enterprise/enterprise">
+				<image src="http://qiniu.gzyanlian.com/微信截图_20200910112722.png" mode="widthFix"></image>
+			</view>
+			<view bindtap="handleJump" data-url="/pages/personal/personal">
+				<image src="http://qiniu.gzyanlian.com/微信截图_20200910112742.png" mode="widthFix"></image>
+			</view>
+		</view>
+	</panel>
+</view>

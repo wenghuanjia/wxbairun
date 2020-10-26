@@ -1,0 +1,7 @@
+<van-cell-group>
+	<time title="起始委托期" bindchangeTime="changeTime" data-name="field9"></time>
+	<time title="结束委托期" bindchangeTime="changeTime" data-name="field10"></time>
+	<van-field bind:blur="onBlur" input-align="right" required label="服务费率" model:value="{{ field11 }}" placeholder="请输入服务费率" />
+	<van-field bind:blur="onBlur" input-align="right" required label="开票金额" model:value="{{ field12 }}" placeholder="请输入开票金额" />
+	<van-field bind:blur="onBlur" input-align="right" label="发票税目" model:value="{{ field17 }}" placeholder="请输入发票税目" />
+</van-cell-group>

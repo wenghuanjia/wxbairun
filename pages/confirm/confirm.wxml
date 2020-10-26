@@ -1,0 +1,43 @@
+<steps active="{{ 2 }}"></steps>
+<view class="info_container">
+  <view class="info_head">
+    <text class="info_title">您提交的基本委托服务信息如下：</text>
+    <text class="info_item">1. 选择的业务信息: {{ product_data.service_type }}</text>
+    <text class="info_item">2. 甲方: {{ product_data.field1 }}</text>
+    <text class="info_item">3. 联系地址: {{ product_data.field2 }}</text>
+    <text class="info_item">4. 联系人: {{ product_data.field3 }}</text>
+    <text class="info_item">5. 联系电话: {{ product_data.field4 }}</text>
+    <block wx:if="{{product_data.service_type == '税务代理'}}">
+      <text class="info_item">6. 起始委托期: {{ product_data.field9 }}</text>
+      <text class="info_item">7. 结束委托期: {{ product_data.field10 }}</text>
+      <text class="info_item">8. 服务费率: {{ product_data.field11 }}</text>
+      <text class="info_item">9. 开票金额: {{ product_data.field12 }}</text>
+      <text class="info_item">10. 发票税目: {{ product_data.field17 }}</text>
+    </block>
+    <block wx:if="{{product_data.service_type == '商事代理'}}">
+      <text class="info_item">6. 签署日期: {{ product_data.field16 }}</text>
+      <text class="info_item">7. 服务费: {{ product_data.field9 }}</text>
+      <text class="info_item">8. 代理服务费率: {{ product_data.field10 }}</text>
+      <text class="info_item">9. 服务企业数: {{ product_data.field11 }}</text>
+      <text class="info_item">10. 企业类型: {{ product_data.field13 }}</text>
+      <text class="info_item">11. 效期年限: {{ product_data.field15 }}年</text>
+      <text class="info_item">12. 甲方开票金额: {{ product_data.field14 }}</text>
+    </block>
+    <block wx:if="{{product_data.service_type == '新业态用工'}}">
+      <text class="info_item">6. 联系邮箱: {{ product_data.field5 }}</text>
+      <text class="info_item">7. 甲方业务场景: {{ product_data.field10 }}</text>
+      <text class="info_item">8. 平台使用费: {{ product_data.field11 }}</text>
+      <text class="info_item">9. 服务费费率: {{ product_data.field12 }}</text>
+      <text class="info_item">10. 计划经营所得: {{ product_data.field13 }}</text>
+      <text class="info_item">11. 户名: {{ product_data.field14 }}</text>
+      <text class="info_item">12. 开户行: {{ product_data.field15 }}</text>
+      <text class="info_item">13. 账户: {{ product_data.field16 }}</text>
+      <text class="info_item">14. 纳税人识别号: {{ product_data.field17 }}</text>
+      <text class="info_item">15. 电话: {{ product_data.field18 }}</text>
+      <text class="info_item">16. 地址: {{ product_data.field19 }}</text>
+    </block>
+  </view>
+  <view class="btn">
+    <van-button bindtap="onNext" type="info" size="large">确认无误，下一步</van-button>
+  </view>
+</view>

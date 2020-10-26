@@ -1,0 +1,8 @@
+.input_con {
+  /* padding: 20rpx; */
+}
+
+.btns {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}

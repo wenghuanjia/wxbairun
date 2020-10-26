@@ -1,0 +1,65 @@
+.create_pserson {}
+
+.create_pserson .tips {
+  display: flex;
+  align-items: center;
+  border: 1px solid #7EC0FF;
+  border-radius: 6rpx;
+}
+
+.create_pserson .left_btn {
+  padding: 4rpx 12rpx;
+  color: #fff;
+  background-color: #0081FF;
+  font-size: 12px;
+}
+
+.create_pserson .right_btn {
+  box-sizing: border-box;
+  padding: 4rpx 12rpx;
+  color: #0081FF;
+  background-color: #fff;
+  border-left: none;
+  font-size: 12px;
+}
+
+.create_pserson .van_cell {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 16px;
+  overflow: hidden;
+  color: #323233;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: #fff;
+}
+
+.create_pserson .van_cell>text {
+  color: #646566;
+  text-align: left;
+}
+
+.create_pserson .van_cell::before {
+  position: absolute;
+  left: 18rpx;
+  color: #ee0a24;
+  font-size: 14px;
+  content: '*';
+}
+
+.create_pserson .upload_container {
+  border-bottom: 1px solid #ebedf0;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create_pserson .upload_container image {
+  width: 320rpx;
+}
+
+.create_pserson .btns {
+  padding: 30rpx;
+}

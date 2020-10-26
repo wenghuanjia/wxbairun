@@ -1,0 +1,13 @@
+<user-head></user-head>
+<van-divider customStyle="padding: 0 20rpx;color: #1989fa; border-color: #1989fa; font-size: 16px;" contentPosition="center">我申请的业务</van-divider>
+<view class="business">
+	<van-panel custom-class="custom_class" title="业务名称" desc="描述信息" status="待联系">
+		<view class="content">内容信息</view>
+	</van-panel>
+	<van-panel custom-class="custom_class" title="业务名称" desc="描述信息" status="待完成">
+		<view class="content">内容信息</view>
+	</van-panel>
+	<van-panel custom-class="custom_class" title="业务名称" desc="描述信息" status="已完成">
+		<view class="content">内容信息</view>
+	</van-panel>
+</view>

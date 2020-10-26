@@ -1,0 +1,16 @@
+<view class="address">
+	<van-swipe-cell right-width="{{ 120 }}">
+		<van-cell-group>
+			<van-cell title="13111111111" label="13111111111@163.com" border="{{ false }}"></van-cell>
+		</van-cell-group>
+		<view slot="right">
+			<van-button custom-style="height: 130rpx;" type="danger" style="height: 130rpx;" bindtap="onDel" square>删除</van-button>
+			<van-button custom-style="height: 130rpx;" type="warning" style="height: 130rpx;" bindtap="onEdit" square>编辑</van-button>
+		</view>
+	</van-swipe-cell>
+	<view class="add_address">
+		<van-button bindtap="onCreatePseron" type="info" size="large">添加新人员</van-button>
+	</view>
+</view>
+
+<van-dialog id="van-dialog" />

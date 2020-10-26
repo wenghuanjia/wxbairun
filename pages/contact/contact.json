@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "选择人员",
+  "navigationBarBackgroundColor": "#0E9DD8",
+  "navigationBarTextStyle": "white"
+}

@@ -1,0 +1,22 @@
+<user-head></user-head>
+<van-divider customStyle="padding: 0 20rpx;color: #1989fa; border-color: #1989fa; font-size: 16px;" contentPosition="center">常用发票抬头</van-divider>
+<view class="business">
+	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{invoiceList}}">
+		<van-cell-group>
+			<van-cell label="{{ '公司名称：' + item.field3 }}" border="{{ false }}">
+				<view slot="title">
+					<text style="padding-right: 20rpx;">纳税人识别号：{{ item.field4 }}</text>
+				</view>
+			</van-cell>
+		</van-cell-group>
+		<view slot="right">
+			<van-button custom-style="height: 130rpx;" type="danger" style="height: 130rpx;" data-id="{{item.id}}" bindtap="onDel" square>删除</van-button>
+			<van-button custom-style="height: 130rpx;" type="warning" style="height: 130rpx;" data-id="{{item.id}}" bindtap="onEdit" square>编辑</van-button>
+		</view>
+	</van-swipe-cell>
+	<view class="add_invoice">
+		<van-button bindtap="onCreateInvoice" type="info" size="large">添加抬头</van-button>
+	</view>
+</view>
+
+<van-dialog id="van-dialog" />

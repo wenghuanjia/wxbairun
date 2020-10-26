@@ -1,0 +1,16 @@
+@import '../../static/style/zcm-main.wxss';
+.avatar {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.no_register {
+  padding-top: 20rpx;
+  font-size: 15px;
+  font-weight: 700;
+  color: #E2DCE4;
+}
+
+.profile_container {
+  width: 100%;
+}

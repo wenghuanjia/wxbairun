@@ -1,0 +1,27 @@
+<view class="profile_container">
+	<view class="position-relative d-flex a-center" style="height: 500rpx;">
+		<image src="../../static/images/bg.jpg" style="height: 500rpx; width: 100%;" mode=""></image>
+		<button wx:if="{{ !avatarUrl || !nickName || !token }}" class="btn d-flex flex-column a-center position-absolute avatar" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+			<image src="/static/images/userpic.png" style="height: 145rpx;width: 145rpx;border: 5rpx:solid; " class="rounded-circle border-light ml-4" mode=""></image>
+			<text class="no_register">尚未注册</text>
+		</button>
+		<view wx:else class="btn d-flex flex-column a-center position-absolute avatar">
+			<image src="{{ avatarUrl }}" style="height: 145rpx;width: 145rpx;border: 5rpx:solid; " class="rounded-circle border-light ml-4" mode=""></image>
+			<text class="no_register">{{ nickName }}</text>
+		</view>
+	</view>
+	<view class="proflie_content">
+		<view class="profile">
+			<van-cell-group custom-class="profile">
+				<van-cell bind:click="onJump" data-url="/pages/business/business" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="服务申请进展" is-link icon="envelop-o" />
+				<van-cell bind:click="onJump" data-url="/pages/invoice/invoice" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="常用发票抬头" is-link icon="orders-o" />
+				<!-- <van-cell bind:click="onJump" data-url="/pages/invoice-history/invoice-history" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="开票" is-link icon="coupon-o" />
+				<van-cell bind:click="onJump" data-url="/pages/contract/contract" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="合同" is-link icon="envelop-o" /> -->
+				<van-cell bind:click="onJump" data-url="/pages/address/address" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="我的地址" is-link icon="qr" />
+				<!-- <van-cell bind:click="onJump" data-url="/pages/contact/contact" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="关联人员" is-link icon="contact" /> -->
+				<van-cell bind:click="makePhoneCall" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="联系岳辉" is-link icon="phone-o" />
+				<van-cell wx:if="{{token}}" bind:click="eliminateStore" size="large" title-style="color: #8799A3; font-size： 16px;padding-left: 10rpx;" title="清除所有缓存" is-link icon="delete" />
+			</van-cell-group>
+		</view>
+	</view>
+</view>

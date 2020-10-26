@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "tax-saving": "/components/tax-saving/tax-saving",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "navigationBarBackgroundColor": "#0993E8",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "个人节税计算器"
+}

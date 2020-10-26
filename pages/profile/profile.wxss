@@ -1,0 +1,48 @@
+.avatar {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.no_register {
+  padding-top: 20rpx;
+  font-size: 15px;
+  font-weight: 700;
+  color: #E2DCE4;
+}
+
+.profile_container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+.proflie_content {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-top: 50rpx;
+}
+
+.profile {
+  border-radius: 20rpx;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* color: #FBBD08 */
+
+.profile_container .cell-index--van-cell__left-icon.van-icon {
+  color: #FBBD08;
+  font-size: 16px;
+}
+
+.btn {
+  font-size: 16px;
+  background-color: transparent;
+  border: transparent;
+  color: #E2DCE4;
+  padding: 0;
+}
+
+.profile_container .btn::after {
+  border: 0;
+}

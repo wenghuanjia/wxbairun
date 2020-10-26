@@ -1,0 +1,13 @@
+<van-notice-bar color="#1989fa" background="#ecf9ff" wrapable scrollable="{{ false }}" text="聚焦财税消息，解读财税政策，分享税务案例和解决思路，致力于财会人能力提升！" />
+<view class="new_list">
+	<block wx:for="{{ newLists }}" wx:key="id">
+		<view class="new_item" data-url="/pages/detail/detail?id={{ item.id }}" bindtap="handleJump">
+			<text class="new_title">{{ item.field1 }}</text>
+			<text class="new_content">{{ item.field2 }}</text>
+			<text class="new_time">{{ item.create_time }}</text>
+		</view>
+	</block>
+	<view class="tips" wx:if="{{ nothing === 1 }}">上拉加载更多...</view>
+	<view class="tips" wx:if="{{ nothing === 2 }}">加载中...</view>
+	<view class="tips" wx:if="{{ nothing === 3 }}">无更多数据...</view>
+</view>

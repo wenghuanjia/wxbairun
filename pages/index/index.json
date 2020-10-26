@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "panel": "/components/panel/panel",
+    "bxb-swiper": "/components/swiper/swiper"
+  },
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,42 @@
+<!-- 轮播图 -->
+<bxb-swiper></bxb-swiper>
+<panel title="财务服务">
+	<view class="nav">
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-dailijizhang"></text>
+			<text class="nav_title">代理记账</text>
+		</navigator>
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-qiyexufei"></text>
+			<text class="nav_title">企业补贴</text>
+		</navigator>
+	</view>
+</panel>
+<panel title="税务筹划">
+	<view class="nav">
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-shuiwu"></text>
+			<text class="nav_title">税务代理</text>
+		</navigator>
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-zongdailizhanghao"></text>
+			<text class="nav_title">商事代理</text>
+		</navigator>
+	</view>
+</panel>
+<panel title="人力资源">
+	<view class="nav">
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-renyuan"></text>
+			<text class="nav_title">新业态用工</text>
+		</navigator>
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-ziyuan"></text>
+			<text class="nav_title">人才引进</text>
+		</navigator>
+		<navigator url="/pages/product/product" class="nav_item">
+			<text class="iconfont icon-shebao"></text>
+			<text class="nav_title">社保代理</text>
+		</navigator>
+	</view>
+</panel>

@@ -1,0 +1,83 @@
+<tax-saving>
+	<view class="input_con">
+		<text class="title">个人今年正常纳税金额</text>
+		<view class="row">
+			<view class="col col_1">
+				<text>正常纳税</text>
+			</view>
+			<view class="col col_2">
+				<text>综合所得额纳税 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.zhsdns_heji }}</text> 元</text>
+				<text>年终奖纳税 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.nianzhongjiangshui }}</text> 元</text>
+			</view>
+			<view class="col col_3">
+				<text>股息利息红利纳税 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.guxihonglishui }}</text> 元</text>
+				<text>个人总纳税 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.zns_heji }}</text> 元</text>
+			</view>
+			<view class="col col_4">
+				实际收入 <text style="color: #FF7B57;font-size: 11px;">{{ taxBefore.shuihou_daoshou }}</text> 元
+			</view>
+			<view class="col col_5">
+				未节税
+			</view>
+		</view>
+	</view>
+	<view class="input_con">
+		<text class="title">正常缴税金额过高，可考虑我司多种合法节税方案</text>
+		<view class="row" wx:for="{{programme}}">
+			<view class="col col_1 active">
+				<text>{{ '0' + (index + 1) }}</text>
+			</view>
+			<view class="col col_2">
+				<text>个人税前收入 {{ item.allshuiqian_year }} 元</text>
+			</view>
+			<view class="col col_3">
+				<text>实际/税前</text>
+				<text>{{ item.shourubilv }}</text>
+			</view>
+			<view class="col col_4">
+				到手金额 {{ item.shuihou_daoshou }} 元
+			</view>
+			<view class="col col_5 active">
+				节省费用 {{ item.jiesheng }} 元
+			</view>
+		</view>
+		<!-- <view class="row">
+			<view class="col col_1 active">
+				<text>02</text>
+			</view>
+			<view class="col col_2">
+				<text>综合所得额纳税XXXX 元</text>
+				<text>年终奖纳税XXXX 元</text>
+			</view>
+			<view class="col col_3">
+				<text>综合所得额纳税XXXX 元</text>
+				<text>年终奖纳税XXXX 元</text>
+			</view>
+			<view class="col col_4">
+				实际收入XXXX 元
+			</view>
+			<view class="col col_5 active">
+				节税XXXX 元
+			</view>
+		</view>
+    <view class="row">
+			<view class="col col_1 active">
+				<text>03</text>
+			</view>
+			<view class="col col_2">
+				<text>综合所得额纳税XXXX 元</text>
+				<text>年终奖纳税XXXX 元</text>
+			</view>
+			<view class="col col_3">
+				<text>综合所得额纳税XXXX 元</text>
+				<text>年终奖纳税XXXX 元</text>
+			</view>
+			<view class="col col_4">
+				实际收入XXXX 元
+			</view>
+			<view class="col col_5 active">
+				节税XXXX 元
+			</view>
+		</view> -->
+	</view>
+</tax-saving>

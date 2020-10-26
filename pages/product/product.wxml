@@ -1,0 +1,15 @@
+<steps active="{{ 0 }}"></steps>
+<view class="info_container">
+	<van-cell-group>
+		<view bindtap="showPopup">
+			<van-field readonly required clickable input-align="right" is-link model:value="{{ service }}" label="选择服务" placeholder="请选择选择服务" />
+		</view>
+	</van-cell-group>
+	<van-popup show="{{ show }}" bindclose="onClose" position="bottom" custom-style="height: 60%">
+		<van-picker title="选择服务" show-toolbar columns="{{ columns }}" bindcancel="onClose" bindconfirm="onConfirm" />
+	</van-popup>
+	<view class="btn">
+    <van-button bindtap="onNext" type="info" size="large">下一步</van-button>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

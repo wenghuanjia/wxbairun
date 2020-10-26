@@ -1,0 +1,13 @@
+<van-cell-group>
+	<van-field bind:blur="onBlur" input-align="right" required label="联系邮箱" model:value="{{ field5 }}" placeholder="请输入联系邮箱" />
+	<van-field bind:blur="onBlur" input-align="right" type="textarea" required label="甲方业务场景" autosize model:value="{{ field10 }}" placeholder="请输入甲方业务场景" />
+	<van-field bind:blur="onBlur" input-align="right" type="number" required label="平台使用费" model:value="{{ field11 }}" placeholder="请输入系统平台使用费" />
+	<van-field bind:blur="onBlur" input-align="right" type="number" required label="服务费费率" model:value="{{ field12 }}" placeholder="请输入服务费费率" />
+	<van-field bind:blur="onBlur" input-align="right" required label="计划经营所得" model:value="{{ field13 }}" placeholder="请输入计划经营所得" />
+	<van-field bind:blur="onBlur" input-align="right" required label="户名" model:value="{{ field14 }}" placeholder="请输入户名" />
+	<van-field bind:blur="onBlur" input-align="right" required label="开户行" model:value="{{ field15 }}" placeholder="请输入开户行" />
+	<van-field bind:blur="onBlur" input-align="right" required label="账户" model:value="{{ field16 }}" placeholder="请输入账户" />
+	<van-field bind:blur="onBlur" input-align="right" required label="纳税人识别号" model:value="{{ field17 }}" placeholder="请输入纳税人识别号" />
+	<van-field bind:blur="onBlur" input-align="right" required label="电话" model:value="{{ field18 }}" placeholder="请输入电话" />
+	<van-field bind:blur="onBlur" input-align="right" required label="地址" model:value="{{ field19 }}" placeholder="请输入地址" />
+</van-cell-group>
