@@ -1,0 +1,34 @@
+.user_auth {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_auth .logo {
+  margin-top: 100rpx;
+  margin-bottom: 40rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.user_auth .tip {
+  display: block;
+  margin: 40rpx 0;
+  text-align: center;
+  font-size: 12px;
+  color: #333333;
+}
+.user_auth .login_btn {
+  width: 100%;
+  margin-bottom: 30rpx;
+  /* background-color: #44BB00;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 16px; */
+}
+.user_auth .back_btn {
+  width: 100%;
+  /* border: none;
+  color: #333333;
+  background-color: #ffffff;
+  font-size: 16px; */
+}

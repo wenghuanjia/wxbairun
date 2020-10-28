@@ -1,10 +1,10 @@
 <view class="address">
-	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{addressList}}">
+	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{addressList}}" wx:key="id">
 		<van-cell-group>
 			<van-cell value="{{ item.field4 }}" label="{{ item.field5 }}" border="{{ false }}">
 				<view slot="title">
 					<text style="padding-right: 20rpx;">{{ item.field3 }}</text>
-					<!-- <van-tag type="success" wx:if="{{index === 1}}">默认地址</van-tag> -->
+					<van-tag type="success" wx:if="{{ item.field7 }}">默认</van-tag>
 				</view>
 			</van-cell>
 		</van-cell-group>

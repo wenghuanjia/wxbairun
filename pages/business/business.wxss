@@ -11,3 +11,23 @@
   margin-bottom: 30rpx;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .time {
+  font-size: 14px;
+  font-size: #333333;
+}
+
+.content .view {
+  font-size: 14px;
+  color: #1989fa;
+  border: 1px solid #1989fa;
+  border-radius: 8rpx;
+  padding: 8rpx 12rpx;
+  box-sizing: border-box;
+}

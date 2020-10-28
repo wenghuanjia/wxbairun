@@ -2,14 +2,14 @@
 	<bxb-swiper></bxb-swiper>
 	<!-- 财税知多点 -->
 	<panel title="财税知多点">
-		<block wx:for="{{ taxSpot }}" wx:key="id">
-			<view class="img_cover" data-url="/pages/new-list/new-list?type={{ item.id }}&title={{ item.name }}" bindtap="handleJump">
-				<text class="service_title">{{ item.name }}</text>
-				<!-- <text class="service_desc">
-					<text class="tip">知</text>多点
-				</text> -->
-			</view>
-		</block>
+		<van-skeleton row="3" loading="{{ loading }}">
+			<block wx:for="{{ taxSpot }}" wx:key="id">
+				<view class="img_cover" data-url="/pages/new-list/new-list?type={{ item.id }}&title={{ item.name }}"
+					bindtap="handleJump">
+					<text class="service_title">{{ item.name }}</text>
+				</view>
+			</block>
+		</van-skeleton>
 	</panel>
 	<!-- 计算器 -->
 	<panel title="计算器">

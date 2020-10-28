@@ -47,3 +47,12 @@ export const addProductInfo = data => libs.post('/user/hetong/add', data)
 
 // 图片上传
 export const uploadImg = data => libs.post('/user/upload/one', data)
+
+// 获取默认 信息
+export const reqDefaultInfo = _ => libs.get('/user/taitou/info')
+
+// 获取 合同列表
+export const reqContractList = _ => libs.get('/user/hetong/list')
+
+// 获取 联系电话
+export const reqPhone = _ => libs.get('/home/index/tell')

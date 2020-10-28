@@ -19,7 +19,8 @@ Component({
     vertical: true,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    loading: true
   },
 
   created() {
@@ -35,7 +36,8 @@ Component({
       let res = await reqBannerData()
       if (res.status === 1) {
         this.setData({
-          swipers: res.data
+          swipers: res.data,
+          loading: false
         })
       } else {
         wx.showToast({

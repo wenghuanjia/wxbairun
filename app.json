@@ -21,7 +21,8 @@
     "pages/contact/contact",
     "pages/create-person/create-person",
     "pages/result/result",
-    "pages/e-result/e-result"
+    "pages/e-result/e-result",
+    "pages/user-auth/user-auth"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -2,7 +2,10 @@
 const utils = require('../../utils/wxUtils').default
 const {
   addOrEditInvoice
-} = require('../../common/api')
+} = require('../../common/api');
+const {
+  default: wxUtils
+} = require('../../utils/wxUtils');
 Page({
 
   /**
@@ -16,22 +19,12 @@ Page({
     field7: '', // 请输入银行账户名称
     field8: '', // 银行账户
     field9: '', // 联系电话
-    editId: null
+    editId: null,
+    field10: false, // 是否默认
   },
 
   async onSubmit() {
-    if (!this.data.field3) {
-      utils.showToast('请输入公司名称')
-      return;
-    }
-    if (!this.data.field4) {
-      utils.showToast('请输入纳税人识别号')
-      return;
-    }
-    if (this.data.field4.toString().length !== 15) {
-      utils.showToast('纳税人识别号长度15')
-      return;
-    }
+    if (!this.checkInput()) return;
     let data = {
       field3: this.data.field3,
       field4: this.data.field4,
@@ -39,7 +32,7 @@ Page({
       field6: this.data.field6,
       field7: this.data.field7,
       field8: this.data.field8,
-      field9: this.data.field9,
+      field10: Number(this.data.field10)
     }
     if (this.data.editId) {
       data.id = this.data.editId
@@ -64,6 +57,40 @@ Page({
     }
   },
 
+  // 检查 输入的文本信息
+  checkInput() {
+    if (!this.data.field3 || this.data.field3.toString().trim().length === 0) {
+      wxUtils.showToast('请输入户名')
+      return false
+    }
+    if (!this.data.field4 || this.data.field4.toString().trim().length === 0) {
+      wxUtils.showToast('请输入开户行')
+      return false
+    }
+    if (!this.data.field5 || this.data.field5.toString().trim().length === 0) {
+      wxUtils.showToast('请输入账户')
+      return false
+    }
+    if (!this.data.field6 || this.data.field6.toString().trim().length === 0) {
+      wxUtils.showToast('请输入纳税人识别号')
+      return false
+    }
+    if (!this.data.field7 || this.data.field7.toString().trim().length === 0) {
+      wxUtils.showToast('请输入电话')
+      return false
+    }
+    if (!this.data.field8 || this.data.field8.toString().trim().length === 0) {
+      wxUtils.showToast('请输入地址')
+      return false
+    }
+    return true
+  },
+  
+  onChange({ detail }) {
+    // 需要手动对 field10 状态进行更新
+    this.setData({ field10: detail });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -79,7 +106,7 @@ Page({
         field6: data.field6,
         field7: data.field7,
         field8: data.field8,
-        field9: data.field9
+        field10: !!(data.field10)
       })
     }
   }

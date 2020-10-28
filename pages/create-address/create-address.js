@@ -9,39 +9,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-    field3: '', // 收件人
-    field4: '', // 手机号码
-    field5: '', // 地区
-    field6: '', // 详细 地址
-    editId: null
+    field3: '', // 甲方
+    field4: '', // 联系地址
+    field5: '', // 联系人
+    field6: '', // 联系电话
+    editId: null,
+    field7: false // 是否默认
   },
 
   async onSubmit() {
     if (!this.data.field3) {
-      utils.showToast('请输入收件人信息')
+      utils.showToast('请输入甲方')
       return;
     }
     if (!this.data.field4) {
-      utils.showToast('请输入手机号码')
-      return;
-    }
-    if (!(/^1[3456789]\d{9}$/.test(this.data.field4))) {
-      utils.showToast('手机号码格式有误')
+      utils.showToast('请输入联系地址')
       return;
     }
     if (!this.data.field5) {
-      utils.showToast('请输入所在地区')
+      utils.showToast('请输入详细人')
       return;
     }
     if (!this.data.field6) {
-      utils.showToast('请输入详细地址')
+      utils.showToast('请输入联系电话')
+      return;
+    }
+    if (!(/^1[3456789]\d{9}$/.test(this.data.field6))) {
+      utils.showToast('联系电话格式有误')
       return;
     }
     let data = {
       field3: this.data.field3,
       field4: this.data.field4,
       field5: this.data.field5,
-      field6: this.data.field6
+      field6: this.data.field6,
+      field7: Number(this.data.field7)
     }
     if (this.data.editId) {
       data.id = this.data.editId
@@ -65,6 +67,11 @@ Page({
     }
   },
 
+  onChange({ detail }) {
+    // 需要手动对 checked 状态进行更新
+    this.setData({ field7: detail });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -77,7 +84,8 @@ Page({
         field3: data.field3,
         field4: data.field4,
         field5: data.field5,
-        field6: data.field6
+        field6: data.field6,
+        field7: !!(data.field7)
       })
     }
   },

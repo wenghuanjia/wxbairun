@@ -1,20 +1,23 @@
-// pages/profile/profile.js
+// pages/user-auth/user-auth.js
 const {
-  login, reqPhone
+  login
 } = require('../../common/api')
 const wxUtils = require('../../utils/wxUtils').default
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: '',
-    nickName: '',
-    token: '',
-    phone: ''
+
   },
+  // 返回首页
+  goHome() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+
   /**
    * 获取用户信息
    * @param {*} e 用户信息
@@ -23,7 +26,7 @@ Page({
     let vm = this;
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
-      this.init(e.detail.userInfo)
+      // this.init(e.detail.userInfo)
       let detail = e.detail
       wx.login({
         success(res) {
@@ -48,13 +51,6 @@ Page({
     }
   },
 
-  init(userInfo) {
-    this.setData({
-      avatarUrl: userInfo.avatarUrl,
-      nickName: userInfo.nickName
-    })
-  },
-
   // 授权登录
   async userLogin(data) {
     try {
@@ -63,8 +59,8 @@ Page({
         wx.setStorageSync('token', res.data.token)
         wx.setStorageSync('user', JSON.stringify(res.data.user))
         wxUtils.showToast(res.msg)
-        this.setData({
-          token: res.data.token
+        wx.navigateBack({
+          delta: 1
         })
       } else {
         wxUtils.showToast(res.msg)
@@ -74,64 +70,17 @@ Page({
     }
   },
 
-  // 跳转
-  onJump(e) {
-    let url = e.currentTarget.dataset.url
-    wxUtils.navigateTo(url, true)
-  },
-
-  // 拨号 功能D
-  makePhoneCall() {
-    wx.makePhoneCall({
-      phoneNumber: this.data.phone
-    })
-  },
-
-  // 清除所有缓存
-  eliminateStore() {
-    wx.showModal({
-      title: '提示',
-      content: '确认清除所有缓存',
-      success: res => {
-        if (res.confirm) {
-          wx.clearStorageSync()
-          this.setData({
-            avatarUrl: '',
-            nickName: '',
-            token: ''
-          })
-          wxUtils.showToast('清除成功')
-        }
-      }
-    })
-  },
-
-  // 获取电话号码
-  async _getPhone() {
-    try {
-      let res = await reqPhone()
-      if (res.status === 1) {
-        this.setData({
-          phone: res.data.toString()
-        })
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getPhone()
     // 查看是否授权
     wx.getSetting({
       success: res1 => {
         if (res1.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: res => {
-              this.init(res.userInfo)
+              // this.init(res.userInfo)
               //用户已经授权过
             }
           })
@@ -139,13 +88,4 @@ Page({
       }
     })
   },
-
-  onShow: function () {
-    let token = wx.getStorageSync('token')
-    if (token) {
-      this.setData({
-        token
-      })
-    }
-  }
 })

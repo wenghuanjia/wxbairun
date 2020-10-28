@@ -42,8 +42,8 @@ Page({
         })
         .then(() => {
           // on confirm
-          wx.switchTab({
-            url: '/pages/profile/profile'
+          wx.navigateTo({
+            url: '/pages/user-auth/user-auth'
           })
         })
         .catch(() => {

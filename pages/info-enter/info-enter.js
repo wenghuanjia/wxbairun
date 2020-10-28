@@ -4,8 +4,7 @@ const {
   checkPhone
 } = require('../../utils/util')
 const {
-  reqInvoice,
-  reqMyAddress
+  reqDefaultInfo
 } = require('../../common/api')
 let inputInfo = {}
 Page({
@@ -25,6 +24,7 @@ Page({
     field4: '', // 联系电话
     invoiceList: [], // 发票抬头列表
     addressList: [], // 地址列表
+    c_data: {}
   },
   // 下一步
   onNext() {
@@ -36,7 +36,6 @@ Page({
       field4: this.data.field4,
       ...inputInfo,
     }
-    console.log(data);
     if (this.data.field1.toString().trim().length === 0) {
       wxUtils.showToast('请输入甲方')
       return
@@ -84,6 +83,10 @@ Page({
     }
     if (inputInfo.field12.toString().trim().length === 0) {
       wxUtils.showToast('请输入开票金额')
+      return false
+    }
+    if (inputInfo.field17.toString().trim().length === 0) {
+      wxUtils.showToast('请输入发票税目')
       return false
     }
     return true
@@ -162,75 +165,29 @@ Page({
       wxUtils.showToast('请输入地址');
       return false
     }
-    
+
     console.log(inputInfo);
     return true
   },
-  // 手风琴 功能 切换
-  onChange(event) {
-    this.setData({
-      activeName: event.detail,
-    });
-  },
-  // 单选框切换
-  onRadioChange(event) {
-    this.setData({
-      radio: event.detail,
-    });
-  },
-  // 单选框点击
-  onRadioClick(event) {
-    console.log(event);
-    const {
-      name
-    } = event.currentTarget.dataset;
-    this.setData({
-      radio: name,
-    });
-  },
 
-  // 单选框切换
-  onRadioChange2(event) {
-    this.setData({
-      address: event.detail,
-    });
-  },
-  // 单选框点击
-  onRadioClick2(event) {
-    const {
-      name
-    } = event.currentTarget.dataset;
-    this.setData({
-      address: name,
-    });
-  },
+  async _getDefaultInfo() {
+    try {
+      let res = await reqDefaultInfo();
+      if (res.status === 1) {
+        console.log(res);
+        if (res.data.dizhi) {
+          this.setData({
+            field1: res.data.dizhi.jiafang,
+            field2: res.data.dizhi.lianxi_dizhi,
+            field3: res.data.dizhi.lianxi_ren,
+            field4: res.data.dizhi.lianxi_dianhua,
+            c_data: res.data.taitou
+          })
+        }
 
-  // 单选框切换
-  onRadioChange3(event) {
-    this.setData({
-      person: event.detail,
-    });
-  },
-
-  // 单选框点击
-  onRadioClick3(event) {
-    const {
-      name
-    } = event.currentTarget.dataset;
-    this.setData({
-      person: name,
-    });
-  },
-
-  // 获取 发票抬头 或者 我的地址
-  async ajaxInfoList(fn, container) {
-    let res = await fn();
-    if (res.status === 1) {
-      this.setData({
-        [container]: res.data
-      })
-    } else {
-      wxUtils.showToast('数据获取失败')
+      }
+    } catch (error) {
+      wxUtils.showToast(error.msg || '默认信息获取失败')
     }
   },
 
@@ -248,12 +205,11 @@ Page({
       this.setData({
         service_type: options.type
       })
+      this._getDefaultInfo()
     } else {
       wx.navigateBack({
         delta: 1
       })
     }
-    // this.ajaxInfoList(reqInvoice, 'invoiceList')
-    // this.ajaxInfoList(reqMyAddress, 'addressList')
   }
 })

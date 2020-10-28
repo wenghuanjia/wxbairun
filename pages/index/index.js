@@ -4,7 +4,8 @@ const {
 
 Page({
   data: {
-    taxSpot: []
+    taxSpot: [],
+    loading: true
   },
 
   // 计算器 跳转事件
@@ -21,11 +22,11 @@ Page({
       let res = await reqTaxSpot();
       if (res.status === 1) {
         this.setData({
-          taxSpot: res.data
+          taxSpot: res.data,
+          loading: false
         })
       }
     } catch (error) {
-      console.log(error)
       wx.showToast({
         icon: 'none',
         title: error.msg

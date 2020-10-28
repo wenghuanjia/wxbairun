@@ -1,0 +1,6 @@
+<view class="user_auth">
+  <image class="logo" src="/static/images/logo.png"></image>
+  <text class="tip">允许微信授权后，可体验更多功能</text>
+  <button class="login_btn" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
+  <button class="back_btn" bindtap="goHome">返回首页</button>
+</view>

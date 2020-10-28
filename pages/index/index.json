@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "panel": "/components/panel/panel",
-    "bxb-swiper": "/components/swiper/swiper"
+    "bxb-swiper": "/components/swiper/swiper",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   },
   "navigationStyle": "custom"
 }

@@ -1,12 +1,19 @@
 <view class="input_con">
 	<van-cell-group>
-		<van-field input-align="left" required label-class="lable" label="公司名称" model:value="{{ field3 }}" placeholder="请输入公司名称" />
-		<van-field input-align="left" maxlength="15" required label-class="lable" label="纳税人识别号" model:value="{{ field4 }}" placeholder="请输入纳税人识别号" />
-		<van-field input-align="left" label-class="lable" label="公司地址" model:value="{{ field5 }}" placeholder="请输入公司地址" />
-		<van-field input-align="left" label-class="lable" label="开户银行" model:value="{{ field6 }}" placeholder="请输入开户银行" />
-		<van-field input-align="left" label-class="lable" label="账户名称" model:value="{{ field7 }}" placeholder="请输入银行账户名称" />
-		<van-field input-align="left" label-class="lable" label="银行账号" model:value="{{ field8 }}" placeholder="银行账户" />
-		<van-field input-align="left" label-class="lable" label="联系电话" model:value="{{ field9 }}" placeholder="联系电话" />
+		<van-field input-align="left" required label-class="lable" label="户名" model:value="{{ field3 }}"
+			placeholder="请输入户名" />
+		<van-field input-align="left" required label-class="lable" label="开户行" model:value="{{ field4 }}"
+			placeholder="请输入开户行" />
+		<van-field input-align="left" required label-class="lable" label="账户" model:value="{{ field5 }}"
+			placeholder="请输入账户" />
+		<van-field input-align="left" maxlength="15" required label-class="lable" label="纳税人识别号" model:value="{{ field6 }}"
+			placeholder="请输入纳税人识别号" />
+		<van-field input-align="left" required label-class="lable" label="电话" model:value="{{ field7 }}" type="number"
+			placeholder="请输入电话" />
+		<van-field input-align="left" required label-class="lable" label="地址" model:value="{{ field8 }}" placeholder="地址" />
+		<van-field use-button-slot readonly label-class="lable" label="设为默认">
+			<van-switch slot="button" checked="{{ field10 }}" bind:change="onChange" />
+		</van-field>
 	</van-cell-group>
 	<view class="btns">
 		<van-button bindtap="onSubmit" type="info" size="large">提交</van-button>

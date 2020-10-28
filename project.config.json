@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "postcss": true,
     "preloadBackgroundData": false,
@@ -56,14 +56,14 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/product/product",
-          "pathName": "pages/product/product",
+          "name": "pages/user-auth/user-auth",
+          "pathName": "pages/user-auth/user-auth",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/confirm/confirm",
-          "pathName": "pages/confirm/confirm",
+          "name": "pages/profile/profile",
+          "pathName": "pages/profile/profile",
           "query": "",
           "scene": null
         }

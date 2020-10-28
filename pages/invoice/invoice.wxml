@@ -1,11 +1,12 @@
 <user-head></user-head>
 <van-divider customStyle="padding: 0 20rpx;color: #1989fa; border-color: #1989fa; font-size: 16px;" contentPosition="center">常用发票抬头</van-divider>
 <view class="business">
-	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{invoiceList}}">
+	<van-swipe-cell right-width="{{ 120 }}" wx:for="{{invoiceList}}" wx:key="id">
 		<van-cell-group>
-			<van-cell label="{{ '公司名称：' + item.field3 }}" border="{{ false }}">
+			<van-cell label="{{ '户名：' + item.field3 }}" border="{{ false }}">
 				<view slot="title">
-					<text style="padding-right: 20rpx;">纳税人识别号：{{ item.field4 }}</text>
+					<text style="padding-right: 20rpx;">纳税人识别号：{{ item.field6 }}</text>
+					<van-tag type="success" wx:if="{{ item.field10 }}">默认</van-tag>
 				</view>
 			</van-cell>
 		</van-cell-group>

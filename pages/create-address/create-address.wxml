@@ -1,12 +1,12 @@
 <view class="input_con">
 	<van-cell-group>
-		<van-field input-align="left" required label-class="lable" label="收件人" model:value="{{ field3 }}" placeholder="请输入收件人" />
-		<van-field input-align="left" required maxlength="11" label-class="lable" label="手机号码" model:value="{{ field4 }}" placeholder="请输入手机号码" />
-		<van-field input-align="left" required label-class="lable" label="所在地区" model:value="{{ field5 }}" placeholder="请输入所在地区" />
-		<van-field input-align="left" required model:value="{{ field6 }}" label="详细地址" type="textarea" placeholder="请输入详细地址" autosize border="{{ false }}" />
-		<!-- <van-field use-button-slot readonly label-class="lable" label="设为默认">
-			<van-switch slot="button" checked="{{ checked }}" bind:change="onChange" />
-		</van-field> -->
+		<van-field input-align="left" required label-class="lable" label="甲方" model:value="{{ field3 }}" placeholder="请输入甲方" />
+		<van-field input-align="left" required label-class="lable" label="联系地址" model:value="{{ field4 }}" placeholder="请输入联系地址" />
+		<van-field input-align="left" required label-class="lable" label="联系人" model:value="{{ field5 }}" placeholder="请输入联系人" />
+		<van-field input-align="left" required maxlength="11" label-class="lable" label="联系电话" model:value="{{ field6 }}" placeholder="请输入联系电话" />
+		<van-field use-button-slot readonly label-class="lable" label="设为默认">
+			<van-switch slot="button" checked="{{ field7 }}" bind:change="onChange" />
+		</van-field>
 	</van-cell-group>
 	<view class="btns">
 		<van-button type="info" bindtap="onSubmit" size="large">确认</van-button>

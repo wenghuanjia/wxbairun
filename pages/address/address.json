@@ -7,7 +7,8 @@
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
     "van-checkbox": "@vant/weapp/checkbox/index",
     "van-checkbox-group": "@vant/weapp/checkbox-group/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-switch": "@vant/weapp/switch/index"
   },
   "navigationBarTitleText": "选择地址",
   "navigationBarBackgroundColor": "#0E9DD8",

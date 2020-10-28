@@ -3,7 +3,21 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    info: {
+      type: Object,
+      observer: function (val) {
+        if (val) {
+          this.setData({
+            field14: val.huming ? val.huming : '',
+            field15: val.kaihuhang ? val.kaihuhang : '',
+            field16: val.zhanghu ? val.zhanghu : '',
+            field17: val.nasui ? val.nasui : '',
+            field18: val.dianhua ? val.dianhua : '',
+            field19: val.dizhi ? val.dizhi : ''
+          })
+        }
+      }
+    }
   },
 
   /**
@@ -30,5 +44,5 @@ Component({
     onBlur() {
       this.triggerEvent('inputChange', this.data)
     }
-  }
+  },
 })

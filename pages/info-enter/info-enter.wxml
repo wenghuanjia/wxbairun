@@ -51,7 +51,7 @@
 	<contract-b bindinputChange="inputChange"></contract-b>
 </block>
 <block wx:if="{{ service_type === '新业态用工' }}">
-	<contract-c bindinputChange="inputChange"></contract-c>
+	<contract-c info="{{ c_data }}" bindinputChange="inputChange"></contract-c>
 </block>
 
 <view class="btn">

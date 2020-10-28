@@ -1,4 +1,6 @@
-const { addProductInfo } = require('../../common/api')
+const {
+  addProductInfo
+} = require('../../common/api')
 const {
   default: wxUtils
 } = require('../../utils/wxUtils');
@@ -391,33 +393,36 @@ Page({
 
   //完成
   async subCanvas() {
-    console.log(this.data.uploadImgUrl);
     if (!this.data.uploadImgUrl) {
       wxUtils.showToast('请先签署合同并上传图片');
       return;
     }
-    let data = JSON.parse(wx.getStorageSync('product_data'))
+    let data = wx.getStorageSync('product_data') ? JSON.parse(wx.getStorageSync('product_data')) : {};
     if (data.type === 1) {
       data['field14'] = this.data.uploadImgUrl
     } else if (data.type === 2) {
       data['field19'] = this.data.uploadImgUrl
-    }else if (data.type === 3) {
+    } else if (data.type === 3) {
       data['field23'] = this.data.uploadImgUrl
     }
-    
+
     delete data['service_type']
-    let res =  await addProductInfo(data)
-    if (res.status === 1) {
-      wxUtils.showToast(res.msg || '签署成功，等待对方与您联系')
-      this.data.timer = setTimeout(() => {
-        wx.removeStorageSync('product_data')
-        clearTimeout(this.data.timer)
-        wx.switchTab({
-          url: '/pages/index/index',
-        })
-      }, 1000)
-    } else {
-      wxUtils.showToast(res.msg)
+    try {
+      let res = await addProductInfo(data)
+      if (res.status === 1) {
+        wxUtils.showToast(res.msg || '签署成功，等待对方与您联系')
+        this.data.timer = setTimeout(() => {
+          wx.removeStorageSync('product_data')
+          clearTimeout(this.data.timer)
+          wx.reLaunch({
+            url: '/pages/business/business'
+          })
+        }, 1000)
+      } else {
+        wxUtils.showToast(res.msg)
+      }
+    } catch (error) {
+      wxUtils.showToast(error.msg)
     }
     // this.data.ctx.draw(true, () => {
     //   wx.canvasToTempFilePath({
